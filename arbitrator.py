@@ -4,12 +4,12 @@ from random import random as random
 
 class Arbitrator:
 
-    def __init__(self, bbcon):
-        self.bbcon = bbcon
+    def __init__(self):
+        pass
 
-    def choose_action(self):
-        # Henter inn behaviours, velger behaviour tilfeldig ut ifra hver weight
-        behaviours = self.bbcon.behaviours
+    def choose_action(self, behaviours):
+        # Velger behaviour tilfeldig ut ifra hver weight
+
         total_weight = sum(b.weight for b in behaviours)
         random_number = random(total_weight)
 

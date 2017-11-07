@@ -14,14 +14,16 @@ class Motob:
         self.value = None
         self.speed = 0.5
 
+    # mottar en motor recommendation mr
+    # antar mr på formen [action(str), value(int)]
     def update(self, mr):
-        # mottar en motor recommendation mr
-        # antar mr på formen [action(str), value(int)]
+
         self.value = mr
         self.operationalize()
 
+    # Gjør om mr til en motor setting, og mater det til motoren.
     def operationalize(self):
-        # Gjør om mr til en motor setting, og mater det til motoren.
+
         action = self.value[0]
         value = self.value[1]
 

@@ -16,5 +16,5 @@ class Arbitrator:
         w = total_weight
         for behavior in behaviors:
             w -= behavior.weight
-            if random_number > w:
+            if random_number >= w:
                 return behavior.motor_recommendations, behavior.halt_request

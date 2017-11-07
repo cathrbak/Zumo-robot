@@ -1,5 +1,6 @@
 from basic_robot.motors import Motors
 
+
 class Motob:
 
     LEFT = "L"
@@ -15,6 +16,7 @@ class Motob:
 
     def update(self, mr):
         # mottar en motor recommendation mr
+        # antar mr på formen [action(str), value(int)]
         self.value = mr
         self.operationalize()
 

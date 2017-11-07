@@ -4,8 +4,8 @@ from random import random as random
 
 class Arbitrator:
 
-    def __init__(self):
-        self.bbcon = BBCON()
+    def __init__(self, bbcon):
+        self.bbcon = bbcon
 
     def choose_action(self):
         # Henter inn behaviours, velger behaviour tilfeldig ut ifra hver weight

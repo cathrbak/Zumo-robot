@@ -9,12 +9,12 @@ class Arbitrator:
 
     def choose_action(self):
         # Henter inn behaviours, velger behaviour tilfeldig ut ifra hver weight
-        behaviors = self.bbcon.behaviors
-        total_weight = sum(b.weight for b in behaviors)
+        behaviours = self.bbcon.behaviours
+        total_weight = sum(b.weight for b in behaviours)
         random_number = random(total_weight)
 
         w = total_weight
-        for behavior in behaviors:
-            w -= behavior.weight
+        for behaviour in behaviours:
+            w -= behaviour.weight
             if random_number >= w:
-                return behavior.motor_recommendations, behavior.halt_request
+                return behaviour.motor_recommendations, behaviour.halt_request

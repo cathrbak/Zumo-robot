@@ -31,6 +31,8 @@ class Motob:
         action = self.value[0]
         value = self.value[1]
 
+        print("[mr] action:", action, ", value:", value)
+
         if action == self.LEFT:
             self.motor.left(speed=self.speed, dur=value)
         elif action == self.RIGHT:

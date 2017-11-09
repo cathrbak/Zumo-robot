@@ -11,6 +11,7 @@ class Behaviour:
         self.halt_request = False
         self.priority = 0
         self.match_degree = 0
+        self.active_flag = False
         self.weight = self.match_degree * self.priority
 
     def consider_deactivation(self):
@@ -38,11 +39,13 @@ class FollowLine(Behaviour):
         for value in self.r_sensob.update():
             if value < self.treshold:
                 self.bbcon.activate_behaviour(self)
+                self.active_flag = True
                 return
 
         # deactivating
         self.weight = 0
         self.bbcon.deactivate_behaviour(self)
+        self.active_flag = False
 
     def consider_deactivation(self):
         self.consider_activation()
@@ -81,7 +84,7 @@ class Obstruction(Behaviour):
     # aktiverer oppførsel hvis noe er nærmere enn 7 cm
     def consider_activation(self):
         if self.u_sensob.get_value() < 7:
-            self.bbcon.active_behaviour(self)
+            self.bbcon.activate_behaviour(self)
             self.active_flag = True
             self.halt_request = True
 

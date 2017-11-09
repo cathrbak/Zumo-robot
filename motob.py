@@ -28,16 +28,18 @@ class Motob:
             print("No mr")
             return
 
-        action = self.value[0]
-        value = self.value[1]
+        action = self.value[0][0]
+        value = self.value[0][1]
+
 
         print("[mr] action:", action, ", value:", value)
-
+        value /= 1000
         if action == self.LEFT:
             self.motor.left(speed=self.speed, dur=value)
         elif action == self.RIGHT:
             self.motor.right(speed=self.speed, dur=value)
         elif action == self.FORWARDS:
+            print("Going forwards")
             self.motor.forward(speed=self.speed, dur=value)
         elif action == self.BACKWARDS:
             self.motor.backward(speed=self.speed, dur=value)

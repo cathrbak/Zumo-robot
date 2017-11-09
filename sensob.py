@@ -52,6 +52,7 @@ class ReflectanceSensob(Sensob):
     def update(self):
         self.sensor.update()
         self.value = self.sensor.get_value()
+        return self.value
 
 
 class CameraSensob(Sensob):

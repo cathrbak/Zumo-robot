@@ -56,11 +56,11 @@ class FollowLine(Behaviour):
     def sense_and_act(self):
         self.r_sensob.update()
 
-        if self.r_sensob.getValue()[1] < self.treshold:
+        if self.r_sensob.get_value()[1] < self.treshold:
             self.motor_recoms = ["L", 50]
             self.match_degree = 0.8
 
-        elif self.r_sensob.getValue()[4] < self.treshold:
+        elif self.r_sensob.get_value()[4] < self.treshold:
             self.motor_recoms = ["R", 50]
             self.match_degree = 0.8
 

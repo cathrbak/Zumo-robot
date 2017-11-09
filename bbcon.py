@@ -1,13 +1,14 @@
 from arbitrator import Arbitrator
 from motob import Motob
+import behaviour
 
 class BBCON:
 
     def __init__(self):
-        self.behaviours = []        # liste med alle oppførslene til bbcon
+        self.behaviours = [behaviour.FollowLine()]        # liste med alle oppførslene til bbcon
         self.active_behaviours = []     # liste med alle oppførsler som er aktive
         self.sensobs = []       # liste med alle sensorobejekt brukt av bbcon
-        self.motobs = Motob(self)        # liste med alle motorobjekt brukt av bbcon
+        self.motobs = Motob()        # liste med alle motorobjekt brukt av bbcon
         self.arbitrator = Arbitrator()   # ikke laget ennå
 
     # legger til en oppførsel

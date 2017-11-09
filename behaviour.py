@@ -124,7 +124,7 @@ class Obstruction(Behaviour):
         self.weight = self.priority * self.match_degree
 
     def sense_and_act(self):
-        self.motor_recoms = ["S"]
+        self.motor_recoms = ["S", 500]
         self.priority = 1
         self.match_degree = 1
 

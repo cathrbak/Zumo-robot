@@ -69,4 +69,5 @@ class CameraSensob(Sensob):
         ''' Returnerer verdi som RGB-array'''
         self.sensor.update()
         self.value = self.sensor.get_value()
+        return self.value
 

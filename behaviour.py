@@ -1,4 +1,5 @@
 from sensob import ReflectanceSensob, UltrasonicSensob, CameraSensob
+from iamger2 import Imager
 
 class Behaviour:
 
@@ -84,7 +85,9 @@ class Obstruction(Behaviour):
     def __init__(self, bbcon):
         super(Obstruction, self).__init__(bbcon)
         self.u_sensob = UltrasonicSensob()
+        self.c_sensob = CameraSensob()
         self.sensobs.append(self.u_sensob)
+        self.sensobs.append(self.c_sensob)
 
     # aktiverer oppførsel hvis noe er nærmere enn 7 cm
     def consider_activation(self):
@@ -122,6 +125,13 @@ class Obstruction(Behaviour):
         self.weight = self.priority * self.match_degree
 
     def sense_and_act(self):
-        self.motor_recoms = ["S", 500]
+        image_object = self.c_sensob.get_value()
+        img = Imager(image=image_object)
+        RGB_values = Imager.get_average_RGB(img)
+        if RGB_values[0] > RGB_values[1] and RGB_values[0] > RGB_values[2]:
+            self.motor_recoms = ["L", 200]
+        else:
+            self.motor_recoms = ["R", 200]
+
         self.priority = 1
         self.match_degree = 1

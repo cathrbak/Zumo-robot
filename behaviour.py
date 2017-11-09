@@ -36,16 +36,23 @@ class FollowLine(Behaviour):
         self.treshold = 0.3
 
     def consider_activation(self):
-        for value in self.r_sensob.update():
-            if value < self.treshold:
-                self.bbcon.activate_behaviour(self)
-                self.active_flag = True
-                return
+        """for value in self.r_sensob.update():
+                    if value < self.treshold:
+                        self.bbcon.activate_behaviour(self)
+                        self.active_flag = True
+                        return
 
-        # deactivating
-        self.weight = 0
-        self.bbcon.deactivate_behaviour(self)
-        self.active_flag = False
+                # deactivating
+                self.weight = 0
+                self.bbcon.deactivate_behaviour(self)
+                self.active_flag = False"""
+
+        if not self.active_flag:
+            self.bbcon.activate_behaviour(self)
+            self.active_flag = True
+        return
+
+
 
     def consider_deactivation(self):
         self.consider_activation()

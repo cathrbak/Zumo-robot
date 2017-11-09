@@ -8,7 +8,6 @@ class Behaviour:
         self.bbcon = bbcon
         self.sensobs = []
         self.motor_recoms = []
-        self.active_flag = False
         self.halt_request = False
         self.priority = 0
         self.match_degree = 0
@@ -38,14 +37,12 @@ class FollowLine(Behaviour):
     def consider_activation(self):
         for value in self.r_sensob.update():
             if value < self.treshold:
-                self.bbcon.active_behaviour(self)
-                self.activate_flag = True
+                self.bbcon.activate_behaviour(self)
                 return
 
         # deactivating
         self.weight = 0
         self.bbcon.deactivate_behaviour(self)
-        self.active_flag = False
 
     def consider_deactivation(self):
         self.consider_activation()

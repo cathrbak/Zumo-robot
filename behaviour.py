@@ -1,5 +1,5 @@
 from sensob import ReflectanceSensob, UltrasonicSensob, CameraSensob
-from iamger2 import Imager
+from basic_robot.imager2 import Imager
 
 class Behaviour:
 

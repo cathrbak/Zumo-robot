@@ -1,6 +1,4 @@
-from sensob import ReflectanceSensob
-from sensob import UltrasonicSensob
-
+from sensob import ReflectanceSensob, UltrasonicSensob, CameraSensob
 
 class Behaviour:
 
@@ -127,9 +125,3 @@ class Obstruction(Behaviour):
         self.motor_recoms = ["S", 500]
         self.priority = 1
         self.match_degree = 1
-
-
-
-
-
-

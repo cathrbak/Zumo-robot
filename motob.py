@@ -24,6 +24,10 @@ class Motob:
     # Gjør om mr til en motor setting, og mater det til motoren.
     def operationalize(self):
 
+        if not self.value:
+            print("No mr")
+            return
+
         action = self.value[0]
         value = self.value[1]
 

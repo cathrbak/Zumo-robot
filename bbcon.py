@@ -5,7 +5,7 @@ import behaviour
 class BBCON:
 
     def __init__(self):
-        self.behaviours = [behaviour.FollowLine()]        # liste med alle oppførslene til bbcon
+        self.behaviours = [behaviour.FollowLine(self)]        # liste med alle oppførslene til bbcon
         self.active_behaviours = []     # liste med alle oppførsler som er aktive
         self.sensobs = []       # liste med alle sensorobejekt brukt av bbcon
         self.motobs = Motob()        # liste med alle motorobjekt brukt av bbcon

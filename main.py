@@ -1,13 +1,16 @@
 from bbcon import BBCON
-from behaviour import FollowLine
+from behaviour import FollowLine, Obstruction
 from zumo_button import ZumoButton
 
 def main():
 
     bbcon = BBCON()
     follow_line = FollowLine(bbcon)
+    obstruction = Obstruction(bbcon)
+
 
     bbcon.add_behaviour(follow_line)
+    bbcon.add_behaviour(obstruction)
 
     ZumoButton().wait_for_press()
 

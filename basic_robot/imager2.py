@@ -165,6 +165,22 @@ class Imager():
     def mortun(self,im2,levels=5,scale=0.75):
         return self.tunnel(levels,scale).morph4(im2.tunnel(levels,scale))
 
+    @staticmethod
+    def getaverageRGB(image):
+        r_sum = 0
+        g_sum = 0
+        b_sum = 0
+        for i in range(image.xmax):
+            for j in range(image.ymax):
+                rgb = image.get_pixel(i, j)
+                r_sum += rgb[0]
+                g_sum += rgb[1]
+                b_sum += rgb[2]
+        r_avg = r_sum / (image.xmax*image.ymax)
+        g_avg = g_sum / (image.xmax*image.ymax)
+        b_avg = b_sum / (image.xmax*image.ymax)
+        return r_avg, g_avg, b_avg
+
 ### *********** TESTS ************************
 
 # Note: the default file paths for these examples are for unix!

@@ -16,7 +16,6 @@ class Sensob:
         for sensor in self.sensors:
             sensor.reset()
 
-
     def update(self):
         return
 
@@ -52,6 +51,7 @@ class ReflectanceSensob(Sensob):
     def update(self):
         self.sensor.update()
         self.value = self.sensor.get_value()
+        return self.value
 
 
 class CameraSensob(Sensob):
@@ -68,4 +68,5 @@ class CameraSensob(Sensob):
         ''' Returnerer verdi som RGB-array'''
         self.sensor.update()
         self.value = self.sensor.get_value()
+        return self.value
 

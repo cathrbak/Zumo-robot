@@ -10,7 +10,7 @@ class Arbitrator:
         # Velger behaviour tilfeldig ut ifra hver weight
 
         total_weight = sum(b.weight for b in behaviours)
-        random_number = random(total_weight)
+        random_number = random()*total_weight
 
         w = total_weight
         for behaviour in behaviours:

@@ -12,7 +12,7 @@ class Motob:
     def __init__(self):
         self.motor = Motors()
         self.value = None
-        self.speed = 0.5
+        self.speed = 0.2
 
     # mottar en motor recommendation mr
     # antar mr på formen [action(str), value(int)]

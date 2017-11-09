@@ -129,9 +129,9 @@ class Obstruction(Behaviour):
         img = Imager(image=image_object)
         RGB_values = Imager.getaverageRGB(img)
         if RGB_values[0] > RGB_values[1] and RGB_values[0] > RGB_values[2]:
-            self.motor_recoms = ["R", 200]
+            self.motor_recoms = ["R", 400]
         else:
-            self.motor_recoms = ["S", 1000]
+            self.motor_recoms = ["S", 100]
 
         self.priority = 1
         self.match_degree = 1

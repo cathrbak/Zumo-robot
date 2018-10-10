@@ -1,7 +1,3 @@
 # plabOving6
 
-hei skjer det noen endring
-
-hei prover her og
-
-...
+An excercises in the course TDT4113

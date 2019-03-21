@@ -1,3 +1,3 @@
 # Zumo Robot 
 
-An excercise in the course TDT4113, using Zumo robot to do specific tasks.
+An excercise in the course TDT4113, using Zumo robot with raspberry pi to do specific tasks.
